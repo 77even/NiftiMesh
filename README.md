@@ -4,10 +4,10 @@
 
 **Watertight, smooth STL reconstruction from NIfTI segmentations.**
 
-[![PyPI](https://img.shields.io/pypi/v/niftimesh.svg)](https://pypi.org/project/niftimesh/)
-[![Python](https://img.shields.io/pypi/pyversions/niftimesh.svg)](https://pypi.org/project/niftimesh/)
-[![Downloads](https://img.shields.io/pypi/dm/niftimesh.svg)](https://pypi.org/project/niftimesh/)
-[![Release](https://img.shields.io/github/v/release/77even/NiftiMesh.svg)](https://github.com/77even/NiftiMesh/releases/latest)
+[![PyPI](https://img.shields.io/pypi/v/niftimesh.svg?cacheSeconds=300)](https://pypi.org/project/niftimesh/)
+[![Python](https://img.shields.io/pypi/pyversions/niftimesh.svg?cacheSeconds=300)](https://pypi.org/project/niftimesh/)
+[![Downloads](https://img.shields.io/pypi/dm/niftimesh.svg?cacheSeconds=300)](https://pypi.org/project/niftimesh/)
+[![Release](https://img.shields.io/github/v/release/77even/NiftiMesh.svg?cacheSeconds=300)](https://github.com/77even/NiftiMesh/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
