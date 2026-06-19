@@ -43,9 +43,7 @@ dependencies = [
 csg = ["meshlib>=3.0"]
 # Read NIfTI via SimpleITK in addition to nibabel (preferred when present).
 sitk = ["SimpleITK>=2.0"]
-# Reproduce the README comparison renders.
-viz = ["pyvista>=0.43", "pillow>=9.0"]
-all = ["meshlib>=3.0", "SimpleITK>=2.0", "pyvista>=0.43", "pillow>=9.0"]
+all = ["meshlib>=3.0", "SimpleITK>=2.0"]
 dev = ["pytest>=7.0", "meshlib>=3.0", "build", "twine"]
 
 [project.urls]

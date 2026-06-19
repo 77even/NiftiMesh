@@ -16,7 +16,6 @@ import vtk
 
 from .builder import CSGMeshBuilder
 from .naive import build_naive
-from .presets import get_preset
 
 logger = logging.getLogger(__name__)
 
@@ -163,7 +162,6 @@ def nifti_to_stl(
     input_path: PathLike,
     output_dir: PathLike,
     mode: str = "csg",
-    preset: Optional[str] = None,
     label_names: Optional[dict] = None,
     gaussian_sigma_mm: float = 1.5,
     suffix: str = "",
@@ -175,10 +173,11 @@ def nifti_to_stl(
     Args:
         input_path: .nii / .nii.gz segmentation file.
         output_dir: directory for the per-label .stl files.
-        mode: "csg", "independent", or "naive". Ignored if ``preset`` sets one.
-        preset: built-in task preset (see niftimesh.presets.PRESETS), e.g.
-            "lung_lobe". Supplies both label_names and the recommended mode.
-        label_names: explicit {label: name} map (overrides the preset's names).
+        mode: "csg" (boolean-CSG peel with shared seams, for one structure split
+            by internal interfaces), "independent" (each label its own closed
+            surface, for disjoint organs), or "naive" (plain marching cubes).
+        label_names: {label_value: name} map for the output filenames. Labels
+            with no entry fall back to ``label_<value>``.
         gaussian_sigma_mm: smoothing radius in mm.
         suffix: appended to each STL filename stem.
         nthreads: worker threads.
@@ -187,12 +186,6 @@ def nifti_to_stl(
     Returns:
         List of written STL file paths.
     """
-    if preset is not None:
-        p = get_preset(preset)
-        mode = p.mode
-        if label_names is None:
-            label_names = dict(p.labels)
-
     seg, spacing, origin = _read_segmentation(input_path)
     meshes = reconstruct(
         seg, spacing, mode=mode,

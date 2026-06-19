@@ -5,8 +5,7 @@ import numpy as np
 import pytest
 
 import niftimesh
-from niftimesh import build_naive, get_preset, reconstruct
-from niftimesh.presets import PRESETS
+from niftimesh import build_naive, reconstruct
 
 
 def _two_blocks():
@@ -25,19 +24,6 @@ def _poly_ok(poly):
 def test_version():
     assert isinstance(niftimesh.__version__, str)
     assert niftimesh.__version__.count(".") >= 2
-
-
-def test_presets_well_formed():
-    for name, preset in PRESETS.items():
-        assert preset.mode in ("csg", "independent")
-        assert preset.labels and all(isinstance(k, int) for k in preset.labels)
-    assert get_preset("lung_lobe").mode == "csg"
-    assert get_preset("core_organs").mode == "independent"
-
-
-def test_unknown_preset_raises():
-    with pytest.raises(KeyError):
-        get_preset("does_not_exist")
 
 
 # -- reconstruction modes --------------------------------------------------

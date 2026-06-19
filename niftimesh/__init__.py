@@ -12,9 +12,12 @@ Two reconstruction modes:
 Quick start::
 
     from niftimesh import nifti_to_stl
-    nifti_to_stl("lobe_seg.nii.gz", "out/", preset="lung_lobe")
 
-    # or pick a mode explicitly
+    # one structure split by internal interfaces (lobes, segments) -> csg
+    nifti_to_stl("lobe_seg.nii.gz", "out/", mode="csg",
+                 label_names={1: "left_lower", 2: "left_upper"})
+
+    # disjoint organs -> independent
     nifti_to_stl("organs.nii.gz", "out/", mode="independent")
 """
 
@@ -22,7 +25,6 @@ from ._version import __version__
 from .builder import CSGMeshBuilder
 from .convert import nifti_to_stl, reconstruct, save_meshes
 from .naive import build_naive
-from .presets import PRESETS, Preset, get_preset
 
 __all__ = [
     "__version__",
@@ -31,7 +33,4 @@ __all__ = [
     "reconstruct",
     "save_meshes",
     "build_naive",
-    "PRESETS",
-    "Preset",
-    "get_preset",
 ]

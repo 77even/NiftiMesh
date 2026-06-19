@@ -1,6 +1,6 @@
 """Command-line interface: ``niftimesh`` (also ``python -m niftimesh``).
 
-    niftimesh seg.nii.gz out/ --preset lung_lobe
+    niftimesh lobe_seg.nii.gz out/ --mode csg --label-names names.json
     niftimesh organs.nii.gz out/ --mode independent --suffix _3d
     niftimesh seg.nii.gz out_raw/ --mode naive        # baseline marching cubes
 """
@@ -13,7 +13,6 @@ from pathlib import Path
 
 from ._version import __version__
 from .convert import nifti_to_stl
-from .presets import PRESETS
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -24,11 +23,10 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("input", help="Input .nii / .nii.gz segmentation, or a directory of them.")
     p.add_argument("output", help="Output directory for the per-label STL files.")
     p.add_argument("--mode", choices=["csg", "independent", "naive"], default="csg",
-                   help="Reconstruction mode (default: csg). Ignored when --preset sets one.")
-    p.add_argument("--preset", choices=sorted(PRESETS), default=None,
-                   help="Built-in task preset: supplies label names and the recommended mode.")
+                   help="Reconstruction mode (default: csg).")
     p.add_argument("--label-names", default=None,
-                   help="JSON file with a {label_value: name} map (overrides preset names).")
+                   help="JSON file with a {label_value: name} map. "
+                        "Labels with no entry are named label_<value>.")
     p.add_argument("--gaussian-sigma", type=float, default=1.5,
                    help="Smoothing radius in mm (default: 1.5).")
     p.add_argument("--suffix", default="",
@@ -70,7 +68,7 @@ def main(argv=None) -> int:
         out_dir = out_root if len(inputs) == 1 else out_root / f.name.replace(".nii.gz", "").replace(".nii", "")
         written = nifti_to_stl(
             f, out_dir,
-            mode=args.mode, preset=args.preset, label_names=label_names,
+            mode=args.mode, label_names=label_names,
             gaussian_sigma_mm=args.gaussian_sigma, suffix=args.suffix,
             nthreads=args.nthreads, binary=not args.ascii)
         total += len(written)

@@ -1,26 +1,14 @@
 # Examples
 
-`data/lung_lobe_seg.nii.gz` is a 5-label pulmonary-lobe segmentation (238×512×512,
-~211 KB) used by the examples and the README figures.
-
-### Convert to STL
+`data/lung_lobe_seg.nii.gz` is a 5-label pulmonary-lobe segmentation
+(238×512×512, ~211 KB) used as a sample.
 
 ```bash
 pip install "niftimesh[csg]"
-python examples/convert.py                       # bundled sample, CSG lobe preset
-python examples/convert.py data/lung_lobe_seg.nii.gz out_indep independent
-```
 
-or straight from the CLI:
+# Python: you define the label names (see convert.py)
+python examples/convert.py
 
-```bash
-niftimesh examples/data/lung_lobe_seg.nii.gz out/ --preset lung_lobe --suffix _3d
-```
-
-### Reproduce the comparison figures
-
-```bash
-pip install "niftimesh[all]"
-python assets/render_comparison.py \
-    --input examples/data/lung_lobe_seg.nii.gz --outdir assets --preset lung_lobe
+# CLI: names from a JSON file ({"1": "left_lower_lobe", ...}), or omit for label_<n>
+niftimesh data/lung_lobe_seg.nii.gz out/ --mode csg --label-names names.json --suffix _3d
 ```
