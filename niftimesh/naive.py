@@ -1,5 +1,5 @@
 # Copyright (c) 2026 Justin
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 
 # Naive marching-cubes baseline: the "ordinary" voxel-to-STL conversion every
 # generic tool ships. One isosurface per label straight off the binary mask --

@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "Watertight, smooth STL reconstruction from NIfTI segmentations (boolean-CSG peel or independent organs)."
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 authors = [{ name = "Justin" }]
 keywords = [
     "nifti", "stl", "segmentation", "marching-cubes", "mesh", "medical-imaging",
@@ -18,7 +18,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Healthcare Industry",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",

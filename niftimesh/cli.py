@@ -1,5 +1,5 @@
 # Copyright (c) 2026 Justin
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 
 """Command-line interface: ``niftimesh`` (also ``python -m niftimesh``).
 
