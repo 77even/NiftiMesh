@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 # High-level NIfTI-segmentation -> per-label STL conversion.
 #
 # Wraps CSGMeshBuilder (csg / independent) and the naive baseline behind one

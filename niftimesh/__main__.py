@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 import sys
 
 from .cli import main

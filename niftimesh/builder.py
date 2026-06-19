@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 # Boolean-CSG ("mimics") lobe / segment STL reconstruction.
 #
 # Splits a closed organ hull with per-label half-space cutters via meshlib

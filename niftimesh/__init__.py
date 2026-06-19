@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 """NiftiMesh -- watertight, smooth STL reconstruction from NIfTI segmentations.
 
 Two reconstruction modes:

@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 """Command-line interface: ``niftimesh`` (also ``python -m niftimesh``).
 
     niftimesh lobe_seg.nii.gz out/ --mode csg --label-names names.json

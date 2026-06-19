@@ -1,3 +1,6 @@
+# Copyright (c) 2026 Justin
+# SPDX-License-Identifier: MIT
+
 # Naive marching-cubes baseline: the "ordinary" voxel-to-STL conversion every
 # generic tool ships. One isosurface per label straight off the binary mask --
 # no field smoothing, no surface fairing, no shared seams. It is intentionally
