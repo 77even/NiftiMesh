@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 648 200" width="648" height="200" role="img" aria-label="NiftiMesh">
+  <title>NiftiMesh</title>
+  <defs>
+    <linearGradient id="wm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2C7FB8"/>
+      <stop offset="1" stop-color="#A86CC4"/>
+    </linearGradient>
+  </defs>
+  <!-- mark (same geometry as logo-mark.svg), placed at left -->
+  <g transform="translate(8,0)" stroke="#1b2138" stroke-width="0.6" stroke-linejoin="round">
+    <polygon points="100,100 100,50 143.30,75"   fill="#F5D08A"/>
+    <polygon points="100,14 174.48,57 143.30,75"  fill="#EBB24E"/>
+    <polygon points="100,14 143.30,75 100,50"      fill="#C9933A"/>
+    <polygon points="100,100 143.30,75 143.30,125" fill="#F2A99E"/>
+    <polygon points="174.48,57 174.48,143 143.30,125" fill="#E36A5E"/>
+    <polygon points="174.48,57 143.30,125 143.30,75"  fill="#C0524A"/>
+    <polygon points="100,100 143.30,125 100,150"   fill="#C9A6DC"/>
+    <polygon points="174.48,143 100,186 100,150"    fill="#A86CC4"/>
+    <polygon points="174.48,143 100,150 143.30,125" fill="#84509E"/>
+    <polygon points="100,100 100,150 56.70,125"    fill="#79B4DC"/>
+    <polygon points="100,186 25.52,143 56.70,125"   fill="#2C7FB8"/>
+    <polygon points="100,186 56.70,125 100,150"      fill="#1F5E8B"/>
+    <polygon points="100,100 56.70,125 56.70,75"   fill="#8FCFC8"/>
+    <polygon points="25.52,143 25.52,57 56.70,75"    fill="#3DA89F"/>
+    <polygon points="25.52,143 56.70,75 56.70,125"   fill="#2C8079"/>
+    <polygon points="100,100 56.70,75 100,50"       fill="#A9DCF0"/>
+    <polygon points="25.52,57 100,14 100,50"         fill="#5BC2E7"/>
+    <polygon points="25.52,57 100,50 56.70,75"        fill="#3F9CC1"/>
+  </g>
+  <g transform="translate(8,0)">
+    <polygon points="100,14 174.48,57 174.48,143 100,186 25.52,143 25.52,57"
+             fill="none" stroke="#1b2138" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#ffffff" stroke="#1b2138" stroke-width="1.2">
+      <circle cx="100" cy="14"  r="3.4"/>
+      <circle cx="174.48" cy="57"  r="3.4"/>
+      <circle cx="174.48" cy="143" r="3.4"/>
+      <circle cx="100" cy="186" r="3.4"/>
+      <circle cx="25.52" cy="143" r="3.4"/>
+      <circle cx="25.52" cy="57"  r="3.4"/>
+      <circle cx="100" cy="100" r="3.0"/>
+    </g>
+  </g>
+  <!-- wordmark -->
+  <g font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+    <text x="232" y="108" font-size="62" font-weight="700" letter-spacing="-1">
+      <tspan fill="#2B3350">Nifti</tspan><tspan fill="url(#wm)">Mesh</tspan>
+    </text>
+    <text x="234" y="140" font-size="20" font-weight="500" letter-spacing="0.5" fill="#6A7187">
+      NIfTI segmentation &#8594; watertight STL
+    </text>
+  </g>
+</svg>

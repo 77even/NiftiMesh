@@ -1,8 +1,6 @@
 <div align="center">
 
-# NiftiMesh
-
-**Watertight, smooth STL reconstruction from NIfTI segmentations.**
+<img src="https://raw.githubusercontent.com/77even/NiftiMesh/main/assets/logo.png" alt="NiftiMesh" width="440">
 
 [![PyPI](https://img.shields.io/pypi/v/niftimesh.svg?cacheSeconds=300)](https://pypi.org/project/niftimesh/)
 [![Python](https://img.shields.io/pypi/pyversions/niftimesh.svg?cacheSeconds=300)](https://pypi.org/project/niftimesh/)
