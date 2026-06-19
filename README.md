@@ -6,6 +6,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/niftimesh.svg)](https://pypi.org/project/niftimesh/)
 [![Python](https://img.shields.io/pypi/pyversions/niftimesh.svg)](https://pypi.org/project/niftimesh/)
+[![Downloads](https://img.shields.io/pypi/dm/niftimesh.svg)](https://pypi.org/project/niftimesh/)
+[![Release](https://img.shields.io/github/v/release/77even/NiftiMesh.svg)](https://github.com/77even/NiftiMesh/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
@@ -41,6 +43,8 @@ pip install niftimesh          # independent + naive modes only
 ```
 
 Python ≥ 3.9. NIfTI is read via `nibabel` (bundled) or `SimpleITK` if installed.
+Prebuilt wheels are also attached to each
+[GitHub Release](https://github.com/77even/NiftiMesh/releases/latest).
 
 ## Usage
 
