@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "niftimesh"
+dynamic = ["version"]
+description = "Watertight, smooth STL reconstruction from NIfTI segmentations (boolean-CSG peel or independent organs)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Justin" }]
+keywords = [
+    "nifti", "stl", "segmentation", "marching-cubes", "mesh", "medical-imaging",
+    "csg", "vtk", "meshlib", "3d-reconstruction", "surface",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Healthcare Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+]
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "vtk>=9.1",
+    "nibabel>=3.2",
+]
+
+[project.optional-dependencies]
+# Boolean-CSG peel (shared fissure seams) needs meshlib. The "independent" and
+# "naive" modes work without it, so it is an opt-in extra.
+csg = ["meshlib>=3.0"]
+# Read NIfTI via SimpleITK in addition to nibabel (preferred when present).
+sitk = ["SimpleITK>=2.0"]
+# Reproduce the README comparison renders.
+viz = ["pyvista>=0.43", "pillow>=9.0"]
+all = ["meshlib>=3.0", "SimpleITK>=2.0", "pyvista>=0.43", "pillow>=9.0"]
+dev = ["pytest>=7.0", "meshlib>=3.0", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/77even/NiftiMesh"
+Repository = "https://github.com/77even/NiftiMesh"
+Issues = "https://github.com/77even/NiftiMesh/issues"
+
+[project.scripts]
+niftimesh = "niftimesh.cli:main"
+
+[tool.setuptools]
+packages = ["niftimesh"]
+
+[tool.setuptools.dynamic]
+version = { attr = "niftimesh._version.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

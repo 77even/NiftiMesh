@@ -1,0 +1,7 @@
+include LICENSE
+include README.md
+include pyproject.toml
+recursive-include examples *.py *.md
+include examples/data/lung_lobe_seg.nii.gz
+graft assets
+global-exclude __pycache__ *.py[cod]
