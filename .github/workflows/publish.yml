@@ -1,15 +1,17 @@
 name: Publish to PyPI
 
-# Build sdist + wheel and publish to PyPI when a version tag (vX.Y.Z) is pushed,
-# or a GitHub Release is published. Uses PyPI Trusted Publishing (OIDC) -- no
-# token needed once the publisher is configured on PyPI. Falls back to a
-# PYPI_API_TOKEN secret if you prefer (see the commented `password` line).
+# Build sdist + wheel and publish to PyPI when a version tag (vX.Y.Z) is pushed.
+# Uses PyPI Trusted Publishing (OIDC) -- no token needed once the publisher is
+# configured on PyPI. Falls back to a PYPI_API_TOKEN secret if you prefer (see
+# the commented `password` line).
+#
+# NOTE: only the tag push triggers a publish. Creating a GitHub Release does NOT
+# re-trigger it, so making a Release for an already-published tag won't attempt a
+# duplicate upload (which PyPI rejects).
 
 on:
   push:
     tags: ["v*"]
-  release:
-    types: [published]
   workflow_dispatch:
 
 jobs:
